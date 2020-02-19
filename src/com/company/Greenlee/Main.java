@@ -39,8 +39,8 @@ class UserInput {
                 System.out.println("That is not a valid double, please try again: ");
                 isDouble = true;
             }
-            System.out.println("Double Accepted.");
         }
+        System.out.println("Double Accepted.");
     }
     public void promptString() {
         boolean string = true;
