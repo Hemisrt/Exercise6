@@ -15,10 +15,10 @@ class UserInput {
     // promptInt() - prompts user to input an integer but will keep prompting if the user input's data type is incorrect.
     public void promptInt() {
         boolean isInt = true;
+        System.out.println("Enter an integer: ");
 
         while (isInt) {
             try {
-                System.out.println("Enter an integer: ");
                 String userInput = input.nextLine();
                 Integer.parseInt(userInput);
                 isInt = false;
@@ -31,19 +31,26 @@ class UserInput {
     }
 
     // promptDouble() - prompts user to input an double but will keep prompting if the user input's data type is incorrect.
-    // Even if a user inputs an integer, it still takes it
     public void promptDouble() {
         boolean isDouble = true;
+        System.out.println("Enter a double: ");
+        String userInput = input.nextLine();
 
         while (isDouble) {
             try {
-                System.out.println("Enter a double: ");
-                String userInput = input.nextLine();
-                Double.parseDouble(userInput);
-                isDouble = false;
-            } catch (NumberFormatException e) {
+                Integer.parseInt(userInput);
                 System.out.println("That is not a valid double, please try again: ");
+                userInput = input.nextLine();
                 isDouble = true;
+            } catch (NumberFormatException e) {
+                try {
+                    Double.parseDouble(userInput);
+                    isDouble = false;
+                } catch (NumberFormatException e1) {
+                    System.out.println("That is not a valid double, please try again: ");
+                    userInput = input.nextLine();
+                    isDouble = true;
+                }
             }
         }
         System.out.println("Double Accepted.");
@@ -52,10 +59,10 @@ class UserInput {
     // promptString() - prompts user to input a String but will keep prompting if the user input's data type is incorrect.
     public void promptString() {
         boolean string = true;
+        System.out.println("Enter a string: ");
 
         while (string) {
             try {
-                System.out.println("Enter a string: ");
                 String userInput = input.nextLine();
                 Double.parseDouble(userInput);
                 System.out.println("That is not a valid string, please try again: ");
