@@ -7,8 +7,12 @@ import java.util.Scanner;
 // Exercise 6
 
 class UserInput {
+    // Scanner
     Scanner input = new Scanner(System.in);
 
+    // Methods
+
+    // promptInt() - prompts user to input an integer but will keep prompting if the user input's data type is incorrect.
     public void promptInt() {
         boolean isInt = true;
 
@@ -26,6 +30,8 @@ class UserInput {
         System.out.println("Integer Accepted.");
     }
 
+    // promptDouble() - prompts user to input an double but will keep prompting if the user input's data type is incorrect.
+    // Even if a user inputs an integer, it still takes it
     public void promptDouble() {
         boolean isDouble = true;
 
@@ -42,6 +48,8 @@ class UserInput {
         }
         System.out.println("Double Accepted.");
     }
+
+    // promptString() - prompts user to input a String but will keep prompting if the user input's data type is incorrect.
     public void promptString() {
         boolean string = true;
 
